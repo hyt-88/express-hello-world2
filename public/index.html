@@ -97,6 +97,10 @@
           const messageList = document.querySelector('.messages')
           const { id, text } = JSON.parse(msg.data)
           const li = document.createElement('li')
+
+          const bubbleColor = getUserColor(id);
+          li.style.setProperty('--bubble-color', bubbleColor);
+
           if (id === myId) {
             li.textContent = `(${id})自分:` + text
           } else {
